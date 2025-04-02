@@ -22,7 +22,12 @@ public class AppProgramacaoFuncional {
     private final List<Estudante> estudantes = new StudentGenerator().generate(TOTAL_ESTUDANTES);
 
     public AppProgramacaoFuncional() {
-
+        final Double maiorNota = estudantes.stream()
+                .filter(e -> e.getSexo() == 'M')
+                .mapToDouble(Estudante::getNota)
+                .max()
+                .orElse(0);
+        System.out.println("Maior nota dos estudantes do sexo masculino: " + maiorNota);
     }
 
     public static void main(String[] args) {

@@ -104,7 +104,7 @@ public class Estudante {
     public String toString(){
         final String cursos = String.format("%-35s", curso == null ? "" : "Curso: " + curso.getNome());
         return String.format(
-                "Id: %6d Nome: %-30s Sexo: %c Nota: %5.2f Ano Grad: %4d %s",
+                "\nId: %6d Nome: %-30s Sexo: %c Nota: %5.2f Ano Grad: %4d %s",
                 id, nome, sexo, nota, anoGraduacao, cursos);
     }
 

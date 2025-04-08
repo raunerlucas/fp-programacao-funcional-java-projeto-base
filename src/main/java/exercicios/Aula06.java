@@ -41,15 +41,15 @@ public class Aula06 extends Aula {
     public Aula06() {
         final var curso = generator.CURSOS[3];
 
-//        System.out.printf("Estudantes mulheres aprovadas: %s%n", getEstudantesMulheresAprovadas());
-//        System.out.printf("Estudantes mulheres aprovadas ordenadas por CURSO e NOTA: %s%n",
-//                getEstudantesMulheresAprovadasOrdenadasPorCursoAndNota());
-//        System.out.printf("Estudantes mulheres aprovadas ordenadas por CURSO decrescente e NOTA crescente: %s%n",
-//                getEstudantesMulheresAprovadasOrdenadasPorCursoDecrescenteAndNotaCrescente());
-//        System.out.printf("Estudantes mulheres aprovadas não ordenadas: %s%n",
-//                getEstudantesMulheresAprovadasNaoOrdenadasModificavel());
-//        System.out.printf("Estudantes mulheres aprovadas ordenadas totalmente decrescente: %s%n",
-//                getEstudantesMulheresAprovadasOrdenadasTotalmenteDecrescente());
+        System.out.printf("Estudantes mulheres aprovadas: %s%n", getEstudantesMulheresAprovadas());
+        System.out.printf("Estudantes mulheres aprovadas ordenadas por CURSO e NOTA: %s%n",
+                getEstudantesMulheresAprovadasOrdenadasPorCursoAndNota());
+        System.out.printf("Estudantes mulheres aprovadas ordenadas por CURSO decrescente e NOTA crescente: %s%n",
+                getEstudantesMulheresAprovadasOrdenadasPorCursoDecrescenteAndNotaCrescente());
+        System.out.printf("Estudantes mulheres aprovadas não ordenadas: %s%n",
+                getEstudantesMulheresAprovadasNaoOrdenadasModificavel());
+        System.out.printf("Estudantes mulheres aprovadas ordenadas totalmente decrescente: %s%n",
+                getEstudantesMulheresAprovadasOrdenadasTotalmenteDecrescente());
         System.out.printf("Estudantes mulheres aprovadas ordenadas por CURSO crescente e NOTA decrescente: %s%n",
                 getEstudantesMulheresAprovadasOrdenadasPorCursoCrescenteAndNotaDecrescente());
     }
@@ -129,7 +129,7 @@ public class Aula06 extends Aula {
                 .filter(mulheresAprovadas)
                 .sorted(Comparator.comparing(Estudante::getCurso).reversed()
                         .thenComparing(Estudante::getNota).reversed())
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -143,7 +143,7 @@ public class Aula06 extends Aula {
                 .filter(mulheresAprovadas)
                 .sorted(Comparator.comparing(Estudante::getCurso)
                         .thenComparing(Estudante::getNota, Comparator.reverseOrder()))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     // TODO: Pode ser que o resultado não esteja correto, mas o código está correto.
